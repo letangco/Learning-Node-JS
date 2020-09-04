@@ -1,0 +1,12 @@
+h1 QUẢN LÝ USERS
+
+form(action="/user" ,method="GET")
+    label(for="q")='Tìm kiếm: '
+    input(type="text" , name='q')
+    br
+    button Search
+ul
+    each user in users
+        li= user.name 
+
+a(href="/user/insert") Thêm User
