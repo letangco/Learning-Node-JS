@@ -4,18 +4,20 @@ var express = require('express');
 
 var app = express();
 
-var controller = require('./controllers/user.controller');
+var bodyParser = require('body-parser');
 
 var port = process.env.PORT || 3000;
+
+var userRouter = require('./routers/user.route');
+
 app.set('view engine', 'pug');
-app.set('views', './views'); // Index hiển thị danh sách User và tìm kiếm User
+app.set('views', './views');
+app.use(express.json());
+app.use(express.urlencoded({
+  extended: true
+})); // Index hiển thị danh sách User và tìm kiếm User
 
-app.get('/', controller.index); // Thêm user vào danh sách
-
-app.get('/add', function (req, res) {
-  res.render('add');
-});
-app.post('/add', controller.postAdd);
+app.use('/', userRouter);
 app.listen(port, function () {
   console.log("Server is listening on " + port);
 });

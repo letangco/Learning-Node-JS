@@ -4,11 +4,6 @@ var express = require('express');
 
 var router = express.Router();
 
-var db = require('../db');
-
-var _require = require('uuid'),
-    uuidv4 = _require.v4;
-
 var controller = require('../controllers/user.controller');
 
 router.get('/', controller.index);
