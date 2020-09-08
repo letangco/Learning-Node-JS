@@ -1,20 +1,30 @@
 extends ./layouts/common.pug
 block content
-    div(class="container content")
-        img(src="/images/Circle_LTC_AVT.png", alt="alt", class="img-user")
-        h1 Thông tin USER
-        form(action="/", method="GET")
-            label(for="q") Tìm kiếm: &nbsp;
-            input(type="text", name="q")
-            button Search
-        ul
-        each user in users
-            li
-            span= user.name
-            span &nbsp;
-            a(href=""+user.id) View
-            span &nbsp;
-            button(type='button' , class="btn btn-primary") Delete
-        hr
-        div
-            a(href="/add") Thêm User    
+    div
+        h1
+            span.mr-2 Users
+            a.btn.btn-success(href="/users/add") New 
+        form(action="/users", method="GET" ,class="d-flex")
+            .input-group.mb-3
+            input.form-control(type='text', placeholder="Search...", aria-label="Search", aria-describedby='button-addon2',name="q")
+            .input-group-append
+                button.btn.btn-warning Search
+
+        table.table.table-striped
+            thead
+                tr
+                th(scope='col') STT
+                th(scope='col') Name
+                th(scope='col') Phone
+                th(scope='col') Action
+            tbody
+                - var i = 1;
+                each user in users
+                    tr
+                        th(scope='row')= i++
+                        td= user.name
+                        td= user.phone
+                        td
+                            a(href="/users/"+user.id) View
+                            span &nbsp;
+                            button(type='button' , class="btn btn-primary") Delete

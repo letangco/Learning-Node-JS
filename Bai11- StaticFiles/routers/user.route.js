@@ -2,17 +2,19 @@ var express = require('express');
 var router = express.Router();
 
 const controller = require('../controllers/user.controller');
+// Trang chủ
+router.get('/',controller.home);
 
 // Hiển thị và tìm kiếm User
-router.get('/', controller.index);
+router.get('/users', controller.index);
 
 // Thêm User
-router.get('/add', controller.viewAdd);
+router.get('/users/add', controller.viewAdd);
 
-router.post('/add',controller.postAdd);
+router.post('/users/add',controller.postAdd);
 
 // Xem thông tin Từng User
-router.get('/:id',controller.viewUser);
+router.get('/users/:id',controller.viewUser);
 
 // Xóa User
 

@@ -3,10 +3,21 @@
     color: red;
 }
 .img-user{
-    width: 150px;
-    height: 150px;
+    width: 25%;
+}
+li{
+    list-style: none;
+}
+
+li a{
+    outline: none;
 }
 .content{
-    width: 100%;
-    display: block;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+.content img{
+    width: 25%;
+    margin: 0 auto;
 }
