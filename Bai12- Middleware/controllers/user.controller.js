@@ -22,17 +22,20 @@ module.exports.viewAdd = (req,res)=>{
 
 module.exports.postAdd = (req,res)=>{
     req.body.id = uuidv4();
-    var error=[];
-    if(!req.body.name) {
-        error.push("Name is required!");
-    }
-    if(!req.body.phone) {
-        error.push("Phone is required!");
-    }
-    if(error.length){
-        res.render('add',{errors: error,values: req.body});
-        return;
-    }
+    // Đoạn này sử dụng validate kiểm tra submit form từ người dùng
+    // Sử dụng Middleware
+
+    // var error=[];
+    // if(!req.body.name) {
+    //     error.push("Name is required!");
+    // }
+    // if(!req.body.phone) {
+    //     error.push("Phone is required!");
+    // }
+    // if(error.length){
+    //     res.render('add',{errors: error,values: req.body});
+    //     return;
+    // }
     db.get('users').push(req.body).write();
     res.redirect('/users');
 };

@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
+var validate = require('../validate/user.validate');
+
 const controller = require('../controllers/user.controller');
 // Trang chủ
 router.get('/', controller.home);
@@ -10,8 +12,8 @@ router.get('/users', controller.index);
 
 // Thêm User
 router.get('/users/add', controller.viewAdd);
-
-router.post('/users/add', controller.postAdd);
+// Middleware thiết lập module kiểm tra validate
+router.post('/users/add', validate.postAdd, controller.postAdd);
 
 // Xem thông tin Từng User
 router.get('/users/:id', controller.viewUser);

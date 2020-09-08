@@ -3,7 +3,12 @@
 var db = require('../db');
 
 var _require = require('uuid'),
-    uuidv4 = _require.v4; // Hiển thị và search User
+    uuidv4 = _require.v4; // Trang chủ
+
+
+module.exports.home = function (req, res) {
+  res.render('home');
+}; // Hiển thị và search User
 
 
 module.exports.index = function (req, res) {
@@ -22,9 +27,22 @@ module.exports.viewAdd = function (req, res) {
 };
 
 module.exports.postAdd = function (req, res) {
-  req.body.id = uuidv4();
+  req.body.id = uuidv4(); // Đoạn này sử dụng validate kiểm tra submit form từ người dùng
+  // Sử dụng Middleware
+  // var error=[];
+  // if(!req.body.name) {
+  //     error.push("Name is required!");
+  // }
+  // if(!req.body.phone) {
+  //     error.push("Phone is required!");
+  // }
+  // if(error.length){
+  //     res.render('add',{errors: error,values: req.body});
+  //     return;
+  // }
+
   db.get('users').push(req.body).write();
-  res.redirect('/');
+  res.redirect('/users');
 }; // Xem thông tin người dùng
 
 
