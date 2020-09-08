@@ -10,5 +10,6 @@ module.exports.postAdd = function(req,res,next){
         res.render('add',{errors: error,values: req.body});
         return;
     }
+    res.locals.success = true;
     next();
 }

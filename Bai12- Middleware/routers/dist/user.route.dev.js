@@ -13,7 +13,7 @@ router.get('/', controller.home); // Hiển thị và tìm kiếm User
 
 router.get('/users', controller.index); // Thêm User
 
-router.get('/users/add', controller.viewAdd); // Middleware thiết lập module kiểm tra validate
+router.get('/users/add', controller.viewAdd); // Middleware thiết lập module kiểm tra validate *****
 
 router.post('/users/add', validate.postAdd, controller.postAdd); // Xem thông tin Từng User
 

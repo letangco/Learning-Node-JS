@@ -36,6 +36,10 @@ module.exports.postAdd = (req,res)=>{
     //     res.render('add',{errors: error,values: req.body});
     //     return;
     // }
+
+    // Biến local trong vòng đời middleware
+    console.log(res.locals);
+
     db.get('users').push(req.body).write();
     res.redirect('/users');
 };
