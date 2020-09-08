@@ -2,5 +2,6 @@ extends ./layouts/common.pug
 block content
         div
             h1 Chi tiết User
-            label(for="")= 'Tên User: '
-            span(class="viewUserName")= user.name
+            p.viewUserName Name: #{user.name}
+            p.viewUserName Phone: #{user.phone}
+
