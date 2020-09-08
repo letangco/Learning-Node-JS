@@ -1,0 +1,9 @@
+extends ./layouts/common.pug
+block content
+        div(class="container")
+            h1 Thêm USER
+            form(action="/add" , method="POST")
+                label(for="name") Họ và tên &nbsp;
+                input(type="text", name="name",class="form-control form-control-lg")
+                br
+                button(class="btn btn-primary mb-2") Add user

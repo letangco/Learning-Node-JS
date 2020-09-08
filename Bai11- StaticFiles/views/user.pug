@@ -1,0 +1,20 @@
+extends ./layouts/common.pug
+block content
+    div(class="container content")
+        img(src="/images/Circle_LTC_AVT.png", alt="alt", class="img-user")
+        h1 Thông tin USER
+        form(action="/", method="GET")
+            label(for="q") Tìm kiếm: &nbsp;
+            input(type="text", name="q")
+            button Search
+        ul
+        each user in users
+            li
+            span= user.name
+            span &nbsp;
+            a(href=""+user.id) View
+            span &nbsp;
+            button(type='button' , class="btn btn-primary") Delete
+        hr
+        div
+            a(href="/add") Thêm User    

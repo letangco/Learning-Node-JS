@@ -1,0 +1,12 @@
+.viewUserName{
+    font-size: 20px;
+    color: red;
+}
+.img-user{
+    width: 150px;
+    height: 150px;
+}
+.content{
+    width: 100%;
+    display: block;
+}
