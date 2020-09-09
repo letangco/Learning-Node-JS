@@ -4,20 +4,22 @@ var router = express.Router();
 var validate = require('../validate/user.validate');
 
 const controller = require('../controllers/user.controller');
+
+const authMiddleware = require('../middleware/auth.middleware');
 // Trang chủ
-router.get('/', controller.home);
+router.get('/', authMiddleware.requireAuth,controller.home);
 
 // Hiển thị và tìm kiếm User
-router.get('/users', controller.index);
+router.get('/users',authMiddleware.requireAuth, controller.index);
 
 // Thêm User
-router.get('/users/add', controller.viewAdd);
+router.get('/users/add', authMiddleware.requireAuth, controller.viewAdd);
 
 // Middleware thiết lập module kiểm tra validate *****
-router.post('/users/add', validate.postAdd, controller.postAdd);
+router.post('/users/add', authMiddleware.requireAuth, validate.postAdd, controller.postAdd);
 
 // Xem thông tin Từng User
-router.get('/users/:id', controller.viewUser);
+router.get('/users/:id',authMiddleware.requireAuth, controller.viewUser);
 
 // Xóa User
 
