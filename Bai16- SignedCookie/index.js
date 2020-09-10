@@ -13,7 +13,9 @@ app.set('views', './views');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cookieParser());
+
+// Phần trong Signed Cookie, truyền chuỗi ngẫu nhiên
+app.use(cookieParser('lkdsnfsd83wunlwlaihoassee'));
 
 // Index hiển thị danh sách User và tìm kiếm User
 app.use('/',userRouter);

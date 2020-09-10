@@ -2,11 +2,6 @@
   "users": [
     {
       "name": "17520296",
-      "phone": "",
-      "id": "238d53e7-1b4a-4e5c-93ad-d9478f5c27f5"
-    },
-    {
-      "name": "17520296",
       "phone": "13143532",
       "id": "959e3471-0819-464b-b200-e04fd247d579"
     },
@@ -30,7 +25,9 @@
     {
       "name": "Trương Thị Mỹ Linh",
       "phone": "0355085340",
-      "id": "57a65dc0-e5c7-47ad-98b5-b4722d06ff46"
+      "id": "57a65dc0-e5c7-47ad-98b5-b4722d06ff46",
+      "email": "linh@gmail.com",
+      "password": "202cb962ac59075b964b07152d234b70"
     },
     {
       "name": "Lê Tăng Có",
