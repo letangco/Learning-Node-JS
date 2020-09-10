@@ -1,0 +1,48 @@
+{
+  "users": [
+    {
+      "name": "17520296",
+      "phone": "13143532",
+      "id": "959e3471-0819-464b-b200-e04fd247d579"
+    },
+    {
+      "name": "Lê Tăng Có",
+      "phone": "0332858127",
+      "id": "610d25e3-94d9-4498-bf0b-a73d036d6588",
+      "email": "letangco@gmail.com",
+      "password": "202cb962ac59075b964b07152d234b70"
+    },
+    {
+      "name": "Lê Tăng Có",
+      "phone": "0332858127",
+      "id": "61737272-0779-4b02-9f49-ba93d2beca26"
+    },
+    {
+      "name": "17520296",
+      "phone": "13143532",
+      "id": "b8cb02a3-5c4e-4559-ade9-5a0c2582038e"
+    },
+    {
+      "name": "Trương Thị Mỹ Linh",
+      "phone": "0355085340",
+      "id": "57a65dc0-e5c7-47ad-98b5-b4722d06ff46",
+      "email": "linh@gmail.com",
+      "password": "202cb962ac59075b964b07152d234b70"
+    },
+    {
+      "name": "Lê Tăng Có",
+      "phone": "7689789",
+      "id": "980beae5-3903-4b13-b797-d267965710fc"
+    },
+    {
+      "name": "Lê Tăng Có",
+      "phone": "2314253453654",
+      "id": "eaa8b2fd-c501-404c-9ec4-0d9cd9fb7ebf"
+    },
+    {
+      "name": "A",
+      "phone": "13143532",
+      "id": "54a815d1-7668-4dcb-bdb8-beca46de6f81"
+    }
+  ]
+}
