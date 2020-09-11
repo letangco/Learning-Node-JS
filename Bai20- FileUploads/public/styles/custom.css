@@ -1,0 +1,23 @@
+.viewUserName{
+    font-size: 20px;
+    color: red;
+}
+.img-user{
+    width: 25%;
+}
+li{
+    list-style: none;
+}
+
+li a{
+    outline: none;
+}
+.content{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+.content img{
+    width: 25%;
+    margin: 0 auto;
+}

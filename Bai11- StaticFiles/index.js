@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true }))
 // Index hiển thị danh sách User và tìm kiếm User
 app.use('/',userRouter);
 
-// Static Files: Lưu trữ các file static ở trong thư mục public
+// Static Files: Lưu trữ các file static ở trong thư mục public *
 app.use(express.static('public'))
 
 app.listen(port, function(){

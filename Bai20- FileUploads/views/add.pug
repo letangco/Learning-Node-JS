@@ -1,0 +1,18 @@
+extends ./layouts/common.pug
+block content
+        div
+            h1 ADD USER
+            if errors
+                each error in errors
+                    .alert.alert-danger(role='alert')= error
+            form(action="/users/add" , method="POST", enctype = "multipart/form-data")
+                .form-group
+                    label(for='exampleInputEmail1') Name
+                    input#exampleInputEmail1.form-control(type='text',name="name", aria-describedby='emailHelp', value=values? values.name : "")
+                .form-group
+                    label(for='exampleInputPassword1') Phone
+                    input#exampleInputPassword1.form-control(type='text', name="phone",value=values ? values.phone: "")
+                .form-group
+                    label(for='exampleInputPassword1') Avatar
+                    input#exampleInputPassword1.form-control-file(type='file', name="avatar")
+                button.btn.btn-primary(type='submit') Add User
