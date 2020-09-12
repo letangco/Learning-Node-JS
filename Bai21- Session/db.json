@@ -627,5 +627,14 @@
       "image": "http://loremflickr.com/350/250",
       "description": "in felis eu sapien cursus vestibulum proin eu mi nulla ac enim in tempor turpis nec"
     }
+  ],
+  "sessions": [
+    {
+      "id": "63ab5e3e-c125-4342-bcfb-fdc0d638569e",
+      "card": {
+        "89de8e00-808e-440d-93bf-1f97e6f2e0b7": 3,
+        "83da2443-37d9-47ca-a313-d3e442ebe222": 1
+      }
+    }
   ]
 }

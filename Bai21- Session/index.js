@@ -11,6 +11,7 @@ var port = process.env.PORT || 3000;
 const userRouter = require('./routers/user.route');
 const authRouter = require('./routers/auth.route');
 const productRouter = require('./routers/product.router');
+const cardRouter = require('./routers/card.route');
 
 const sessionMiddleware = require('./middleware/session.middleware');
 
@@ -26,8 +27,9 @@ app.use(sessionMiddleware);
 
 // Index hiển thị danh sách User và tìm kiếm User
 app.use('/',userRouter);
-app.use('/auth',authRouter);
+app.use('/auth', authRouter);
 app.use('/',productRouter);
+app.use('/card', cardRouter);
 
 // Static Files: Lưu trữ các file static ở trong thư mục public
 app.use(express.static('public'))

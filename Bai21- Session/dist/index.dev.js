@@ -20,6 +20,8 @@ var authRouter = require('./routers/auth.route');
 
 var productRouter = require('./routers/product.router');
 
+var cardRouter = require('./routers/card.route');
+
 var sessionMiddleware = require('./middleware/session.middleware');
 
 app.set('view engine', 'pug');
@@ -34,7 +36,8 @@ app.use(sessionMiddleware); // Index hiển thị danh sách User và tìm kiế
 
 app.use('/', userRouter);
 app.use('/auth', authRouter);
-app.use('/', productRouter); // Static Files: Lưu trữ các file static ở trong thư mục public
+app.use('/', productRouter);
+app.use('/card', cardRouter); // Static Files: Lưu trữ các file static ở trong thư mục public
 
 app.use(express["static"]('public'));
 app.listen(port, function () {
