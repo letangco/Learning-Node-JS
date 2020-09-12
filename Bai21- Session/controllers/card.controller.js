@@ -11,12 +11,3 @@ module.exports.addToCard = (req,res,next)=>{
     db.get('sessions').find({id: sessionId}).set('card.'+productId,countProduct+1).write();
     res.redirect('/products');
 };
-
-module.exports.viewCardProduct = (req, res, next)=>{
-    var sessionId = req.signedCookies.sessionId;
-    if (sessionId){
-        var id = db.get('sessions').find({id : sessionId}).value();
-        res.render('layouts/common',{id: id});
-    }
-    next();
-}

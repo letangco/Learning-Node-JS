@@ -19,18 +19,3 @@ module.exports.addToCard = function (req, res, next) {
   }).set('card.' + productId, countProduct + 1).write();
   res.redirect('/products');
 };
-
-module.exports.viewCardProduct = function (req, res, next) {
-  var sessionId = req.signedCookies.sessionId;
-
-  if (sessionId) {
-    var id = db.get('sessions').find({
-      id: sessionId
-    }).value();
-    res.render('layouts/common', {
-      id: id
-    });
-  }
-
-  next();
-};

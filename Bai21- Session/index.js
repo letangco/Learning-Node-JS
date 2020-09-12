@@ -14,6 +14,8 @@ const productRouter = require('./routers/product.router');
 const cardRouter = require('./routers/card.route');
 
 const sessionMiddleware = require('./middleware/session.middleware');
+const viewCardProduct = require('./middleware/viewCardProduct.middleware');
+
 
 app.set('view engine', 'pug');
 app.set('views', './views');
@@ -24,6 +26,7 @@ app.use(express.urlencoded({ extended: true }));
 // Phần trong Signed Cookie, truyền chuỗi ngẫu nhiên
 app.use(cookieParser(process.env.SESSION_SECRET));
 app.use(sessionMiddleware);
+app.use(viewCardProduct.viewCardProduct);
 
 // Index hiển thị danh sách User và tìm kiếm User
 app.use('/',userRouter);

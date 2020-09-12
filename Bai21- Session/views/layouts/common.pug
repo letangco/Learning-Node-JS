@@ -18,7 +18,7 @@ html
                     li.nav-item
                         a.nav-link(href='/products') Product
                     li.nav-item
-                        a.nav-link(href='/card') Cart
+                        a.nav-link(href='/card') Cart #{countProduct}
             if user
                 p.mt-3= user.name
                 span.far.fa-user.pl-2(aria-hidden='true')
