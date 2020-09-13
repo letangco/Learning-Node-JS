@@ -27,7 +27,7 @@ router.post('/users/add', upload.single('avatar'), authMiddleware.requireAuth, v
 router.get('/users/:id',authMiddleware.requireAuth, controller.viewUser);
 
 // Xóa User
-
+router.get('/delete/:id',authMiddleware.requireAuth, controller.deleteUser);
 // Middleware
 // Chạy middleware 1 trước khi middleware 2 chạy
 // => middleware 1 chạy next() thì ms tiếp tục chuyển sang middleware 2 chạy

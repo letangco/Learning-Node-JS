@@ -53,3 +53,13 @@ module.exports.viewUser = (req, res)=>{
     res.render('viewUser',{user:user});
 };
 
+//Xóa thông tin người dùng
+module.exports.deleteUser = (req,res,next)=>{
+    var id = req.params.id;
+    // Lấy index cần xóa
+    // var removeIndex = db.get('users').value().map(function(item) { return item.id; }).indexOf(id);
+    // Thực hiện xóa giá trị tại vị trí index
+    // db.get('users').value().splice(removeIndex, 1);
+    db.get('users').remove({ id: id }).write();
+    res.redirect('/users');
+};
